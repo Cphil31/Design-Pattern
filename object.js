@@ -3,6 +3,7 @@
   // object
   window.app = {
   	timer : 10,
+
   	intervalID:null,
   	init: function(){
   		app.listeners();
@@ -13,7 +14,10 @@
   		$("#stop").on('click', app.stop);
   		$("#reset").on('click', app.recommencer);
   	},
+
+
   	start:function(){
+  	
   		app.intervalID=setInterval(app.decremente,1000);
   	},
 
@@ -44,9 +48,22 @@
   		$("#seconde").html(seconde);
   	},
 
-  	recommencer:function(){
-  		app.init;
+  	recuperer:function(){
+		$("#inputMinutes").val(),
+		$("#inputSecondes").val();
+	
   	},
+
+  	recommencer:function(){
+  		
+		app.stop();
+		app.timer=
+		app.start();
+		
+
+  	},
+
+
   };
 
   app.init();
