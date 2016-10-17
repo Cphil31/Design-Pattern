@@ -2,7 +2,7 @@
 (function(){
   // object
   window.app = {
-  	timer : 100,
+  	timer : 10,
   	intervalID:null,
   	init: function(){
   		app.listeners();
@@ -32,14 +32,20 @@
   	afficher:function(){
   		var minute = parseInt(app.timer/60, 10);
   		var seconde = parseInt(app.timer - minute*60);
+
+
+  		if(minute < 10){
+			minute = '0'+ minute; 
+		}
+		if(seconde < 10){
+			seconde = '0' + seconde;
+		}
   		$("#minute").html(minute);
   		$("#seconde").html(seconde);
   	},
 
   	recommencer:function(){
-			$("#minute").html(minute);
-  			$("#seconde").html(seconde);
-  			app.timer;
+  		app.init;
   	},
   };
 
