@@ -8,13 +8,13 @@
   		app.listeners();
 
   	},
-  	listeners: function(){
+  	listeners:function(){
   		$("#start").click(app.start);
   		$("#stop").on('click', app.stop);
+  		$("#reset").on('click', app.recommencer);
   	},
-  	start: function(){
+  	start:function(){
   		app.intervalID=setInterval(app.decremente,1000);
-  		console.log("ok");
   	},
 
   	decremente : function () {
@@ -34,7 +34,13 @@
   		var seconde = parseInt(app.timer - minute*60);
   		$("#minute").html(minute);
   		$("#seconde").html(seconde);
-  	}
+  	},
+
+  	recommencer:function(){
+			$("#minute").html(minute);
+  			$("#seconde").html(seconde);
+  			app.timer;
+  	},
   };
 
   app.init();
