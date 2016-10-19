@@ -11,6 +11,9 @@
     intervalID:null,
     inputmin:null,
     inputsec:null,
+    total:null,
+    minu:null,
+    seco:null,
 
 
     init: function(){
@@ -76,13 +79,32 @@ reset:function(){
 
 réinitialiser:function(){
 
-    var minu = parseInt(app.inputmin/60, 10);
-    var seco = parseInt(app.inputsec - minu*60);
-    var total = minu + seco;
+
+    // Je récupères les valeurs dans les inputs
     app.inputmin=$("#inputMinutes").val(),
     app.inputsec=$("#inputSecondes").val(),
+    // j'assigne parseint aux inputs
+    app.minu = parseInt(app.inputmin/60, 10);
+    app.seco = parseInt(app.inputsec - app.minu*60);
+
+    // J'affiche les inputs en haut 
+    $("#minute").html(app.inputmin);
+    $("#seconde").html(app.inputsec);
+
+    if(app.inputmin < 10){
+     app.inputmin = '0'+ app.inputmin; 
+   }
+   if(app.inputsec < 10){
+     app.inputsec = '0' + app.inputsec;
+   }
+  
+
+    app.timer=app.minu+app.seco,
+    
+
     console.log(app.inputmin);
     console.log(app.inputsec);
+    console.log(app.timer);
     
   },
 
