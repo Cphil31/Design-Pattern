@@ -75,12 +75,15 @@ reset:function(){
 
 
 réinitialiser:function(){
+
     var minu = parseInt(app.inputmin/60, 10);
     var seco = parseInt(app.inputsec - minu*60);
+    var total = minu + seco;
     app.inputmin=$("#inputMinutes").val(),
     app.inputsec=$("#inputSecondes").val(),
     console.log(app.inputmin);
     console.log(app.inputsec);
+    
   },
 
 };
