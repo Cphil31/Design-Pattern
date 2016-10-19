@@ -1,13 +1,18 @@
    
 (function(){
   "use strict";
+  $("#minute").html("00");
+  $("#seconde").html("00");
   // object
   var app = {
-  	
+
     timer:null,
     temps:null,
-
     intervalID:null,
+    inputmin:null,
+    inputsec:null,
+
+
     init: function(){
       app.listeners();
     },
@@ -16,11 +21,12 @@
       $("#start").click(app.start);
       $("#stop").on('click', app.stop);
       $("#reset").on('click', app.reset);
+      $("#réinitialiser").on('click', app.réinitialiser);
     },
 
 
     start:function(){
-      app.timer=20,
+      app.timer=120,
       console.log(app.timer);
       app.stop();
       app.intervalID=setInterval(app.decremente,1000);
@@ -54,11 +60,11 @@
    $("#minute").html(minute);
    $("#seconde").html(seconde);
 
-  },
+ },
 
  recuperer:function(){
-  var sec =$("#inputSecondes").val();
-  var min =$("#inputMinutes").val();
+  
+  console.log(timer);
 },
 
 reset:function(){
@@ -66,6 +72,17 @@ reset:function(){
   console.log(app.timer);
   app.start();
 },
+
+
+réinitialiser:function(){
+    var minu = parseInt(app.inputmin/60, 10);
+    var seco = parseInt(app.inputsec - minu*60);
+    app.inputmin=$("#inputMinutes").val(),
+    app.inputsec=$("#inputSecondes").val(),
+    console.log(app.inputmin);
+    console.log(app.inputsec);
+  },
+
 };
 
 app.init();
