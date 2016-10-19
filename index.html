@@ -4,34 +4,42 @@
 	<meta charset="UTF-8">
 	<title>Document</title>
 	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.css">
 </head>
 <html>
 
 <body>
-	<div class="compte">
+
+<div class="ui grid container">
+<div class="four wide column">
+	
 		<span id="minute"></span>:
+</div>
+<div class="four wide column">
 		<span id="seconde"></span>
-	</div>
-	<div>
-		<input id ="inputMinutes" >Minutes
-		<input id ="inputSecondes" >Secondes
-	</div>
+</div>
+</div>
 
-
-		<button id="start">Start</button>
-		<button id="stop">Stop</button>
-		<button id="reset">Reset</button>
-		<button id="réinitialiser">réinitialiser</button>
+    <input id ="inputMinutes" >Minutes
+    <input id ="inputSecondes" >Secondes
 
 
 
-	
-	
-	
+
+<div class="ui grid container">
+  <div class="four wide column"><button id="start">Start</button></div>
+  <div class="four wide column"><button id="stop">Stop</button></div>
+  <div class="four wide column"><button id="reset">Reset</button></div>
+  <div class="four wide column"><button id="réinitialiser">réinitialiser</button></div>
+</div>
+		
+		
+		
+		
 
 
 	<script src="node_modules/jquery/dist/jquery.min.js"></script>
-
 	<script src="object.js"></script>
+	<script src="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.js"></script>
 </body>
 </html>

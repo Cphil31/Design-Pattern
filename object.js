@@ -1,23 +1,27 @@
    
 (function(){
+  "use strict";
   // object
-  window.app = {
+  var app = {
   	
-    timer:20,
-   
+    timer:null,
+    temps:null,
+
     intervalID:null,
     init: function(){
       app.listeners();
-  	},
+    },
 
-  	listeners:function(){
-  		$("#start").click(app.start);
-  		$("#stop").on('click', app.stop);
-  		$("#reset").on('click', app.reset);
-  	},
+    listeners:function(){
+      $("#start").click(app.start);
+      $("#stop").on('click', app.stop);
+      $("#reset").on('click', app.reset);
+    },
 
 
-  	start:function(){
+    start:function(){
+      app.timer=20,
+      console.log(app.timer);
       app.stop();
       app.intervalID=setInterval(app.decremente,1000);
 
@@ -28,9 +32,8 @@
       app.afficher();
       if(app.timer<=0){
        clearInterval(app.intervalID);
-
      }
-    },
+   },
 
    stop:function(){
     clearInterval(app.intervalID);
@@ -51,16 +54,17 @@
    $("#minute").html(minute);
    $("#seconde").html(seconde);
 
- },
+  },
 
  recuperer:function(){
   var sec =$("#inputSecondes").val();
   var min =$("#inputMinutes").val();
-  },
+},
 
 reset:function(){
-  return app.start();
-  
+  app.temps=app.timer,
+  console.log(app.timer);
+  app.start();
 },
 };
 
