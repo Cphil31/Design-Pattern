@@ -9,8 +9,7 @@
     timer:null,
     temps:null,
     intervalID:null,
-    inputmin:null,
-    inputsec:null,
+    inputMin:null,
     total:null,
     minu:null,
     seco:null,
@@ -24,12 +23,17 @@
       $("#start").click(app.start);
       $("#stop").on('click', app.stop);
       $("#reset").on('click', app.reset);
-      $("#réinitialiser").on('click', app.réinitialiser);
+      $("#réinitialiser").on('click', app.restart);
     },
 
 
     start:function(){
-      app.timer=120,
+      var minute = parseInt($("#inputMinutes").val()*60) ;
+      var seconde = parseInt($("#inputSecondes").val());
+      app.timer=minute+seconde,
+      console.log(minute);
+      console.log(seconde);
+      console.log(app.inputSecondes);
       console.log(app.timer);
       app.stop();
       app.intervalID=setInterval(app.decremente,1000);
@@ -44,7 +48,7 @@
      }
    },
 
-   stop:function(){
+  stop:function(){
     clearInterval(app.intervalID);
 
   },
@@ -65,8 +69,8 @@
 
  },
 
- recuperer:function(){
-  
+recuperer:function(){
+
   console.log(timer);
 },
 
@@ -79,35 +83,35 @@ reset:function(){
 
 réinitialiser:function(){
 
-
     // Je récupères les valeurs dans les inputs
-    app.inputmin=$("#inputMinutes").val(),
-    app.inputsec=$("#inputSecondes").val(),
-    // j'assigne parseint aux inputs
-    app.minu = parseInt(app.inputmin/60, 10);
-    app.seco = parseInt(app.inputsec - app.minu*60);
+   
 
+    // j'assigne parseint aux inputs
+    app.minu = parseInt(app.inputMin/60, 10);
+    app.seco = parseInt(app.inputsec - app.minu*60);
     // J'affiche les inputs en haut 
-    $("#minute").html(app.inputmin);
+    $("#minute").html(app.inputMin);
     $("#seconde").html(app.inputsec);
 
-    if(app.inputmin < 10){
+    if(app.inputMin < 10){
      app.inputmin = '0'+ app.inputmin; 
    }
    if(app.inputsec < 10){
      app.inputsec = '0' + app.inputsec;
    }
-  
 
-    app.timer=app.minu+app.seco,
-    
 
-    console.log(app.inputmin);
-    console.log(app.inputsec);
-    console.log(app.timer);
-    
-  },
+   app.timer=app.inputmin+app.inputsec,
 
+   console.log(app.inputmin);
+   console.log(app.inputsec);
+   console.log(app.timer);
+
+
+ },
+restart:function(){
+  window.location.reload()
+},
 };
 
 app.init();
