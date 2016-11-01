@@ -1,7 +1,6 @@
 {
   "name": "designpattern101",
   "version": "1.0.0",
-  "description": "",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,5 +9,15 @@
   "license": "ISC",
   "dependencies": {
     "jquery": "^3.1.1"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cphil31/Design-Pattern.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Cphil31/Design-Pattern/issues"
+  },
+  "homepage": "https://github.com/Cphil31/Design-Pattern#readme",
+  "description": ""
 }

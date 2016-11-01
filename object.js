@@ -29,7 +29,7 @@
 
     start:function(){
       var minute = parseInt($("#inputMinutes").val()*60) ;
-      var seconde = parseInt($("#inputSecondes").val());
+      var seconde = parseInt($("#inputSecondes").val())<0;
       app.timer=minute+seconde,
       console.log(minute);
       console.log(seconde);
