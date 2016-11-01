@@ -3,7 +3,7 @@
   "use strict";
   $("#minute").html("00");
   $("#seconde").html("00");
-  // object
+  
   var app = {
 
     timer:null,
